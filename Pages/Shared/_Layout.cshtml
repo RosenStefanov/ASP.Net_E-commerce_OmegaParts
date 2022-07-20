@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - OmegaParts</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/OmegaParts.styles.css" asp-append-version="true"/>
+</head>
+<body>
+<header>
+  <div class="sidebar-container">
+      <div class="sidebar-logo">
+        Omegaparts
+      </div>
+      <ul class="sidebar-navigation">
+        <li class="header">Navigation</li>
+        <li>
+          <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
+        </li>
+        <li>
+          <a class="nav-link text-white" asp-area="" asp-page="/Clutch">Clutch</a>
+        </li>
+        <li>
+          <a class="nav-link text-white" asp-area="" asp-page="/Head_Gasket">Head Gasket</a>
+        </li>
+        <li>
+         <a class="nav-link text-white" asp-area="" asp-page="/Cart">Cart</a>
+        </li>
+      </ul>
+    </div>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

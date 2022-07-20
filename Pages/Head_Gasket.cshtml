@@ -1,0 +1,33 @@
+﻿@page
+@model Head_Gasket
+@{
+    ViewData["Title"] = "Head Gasket";
+}
+<h1>@ViewData["Title"]</h1>
+<div class="container">
+    <div class="row">
+        @{
+            foreach (var item in Model.GasketModels)
+            {
+                <div class="col">
+                    <div class="card" style="width: 18rem; margin-bottom: 15px">
+                        <div class="card-body">
+                            <form method="post">
+                                <input type="hidden" asp-for="HeadGasket.Brand" value="@item.Brand" />
+                                <input type="hidden" asp-for="HeadGasket.Make_and_model" value="@item.Make_and_model" />
+                                <input type="hidden" asp-for="HeadGasket.Engine_Code" value="@item.Engine_Code" />
+                                <input type="hidden" asp-for="HeadGasket.Price" value="@item.Price" />
+                                <input type="hidden" asp-for="HeadGasket.Id" value="@item.Id" />
+                                <h5 class="card-title" >@item.Brand</h5>
+                                <h6 class="card-title">Make and Model: @item.Make_and_model</h6>
+                                <h6 class="card-title">Diameter: @item.Engine_Code</h6>
+                                <h6 class="card-title">Price: @item.Price</h6>
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

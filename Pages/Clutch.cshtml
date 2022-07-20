@@ -1,0 +1,34 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Clutch";
+}
+<h1>@ViewData["Title"]</h1>
+<div class="container">
+  <div class="row">
+    @{
+      foreach (var item in Model.ClutchModels)
+      {
+        <div class="col">
+          <div class="card" style="width: 18rem; margin-bottom: 15px">
+            <div class="card-body">
+              <form method="post">
+                <input type="hidden" asp-for="ClutchModelss.Brand" value="@item.Brand" />
+                <input type="hidden" asp-for="ClutchModelss.Make_and_model" value="@item.Make_and_model" />
+                <input type="hidden" asp-for="ClutchModelss.Diam" value="@item.Diam" />
+                <input type="hidden" asp-for="ClutchModelss.Price" value="@item.Price" />
+                <input type="hidden" asp-for="ClutchModelss.Id" value="@item.Id" />
+                <h5 class="card-title" >@item.Brand</h5>
+                <h6 class="card-title">Make and Model: @item.Make_and_model</h6>
+                <h6 class="card-title">Diameter: @item.Diam</h6>
+                <h6 class="card-title">Price: @item.Price</h6>
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>
+
